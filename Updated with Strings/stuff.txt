@@ -1,0 +1,57 @@
+{display: none
+}
+hides the entry you use it on. 
+
+
+{display: block}
+
+shows your entry
+
+
+
+
+hidden
+
+on click
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

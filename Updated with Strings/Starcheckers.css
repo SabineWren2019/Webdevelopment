@@ -1,0 +1,42 @@
+body {
+background-color: light grey;
+text-align: center;
+}
+
+.cell {
+width: 100px;
+height: 100px;
+display: inline-block;
+margin: 0px;
+*//max-width:;
+*//max-height:;
+}
+
+#board-container {
+background-color: gold;
+display: inline-block;
+padding: 10px;
+}
+
+
+.black  {
+background-image: url("tie.png");}
+
+
+.red
+
+{ background-image: url("fighters.png")}
+
+
+.checker {
+margin: 10%;
+height: 80%;
+width: 80%;
+}
+
+.red-checker {
+ background-image: url("RebelBird.png")}
+
+.black-checker {
+ background-image: url("RedEmpire.png");}
+
