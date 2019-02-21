@@ -1,0 +1,55 @@
+<html>
+
+<head>
+
+<title>StarCheckers</title>
+
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="Starcheckers.css">
+<script src="StarCheckersStringI.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+
+
+<script>
+function toggle(cell) {
+    console.log('toggling cell:', cell)
+    let redChecker= cell.children [0]
+let blackChecker = cell.children[1]
+if (!redChecker.hidden && blackChecker.hidden) {
+redChecker.hidden=true
+blackChecker.hidden=false
+}
+ else if (redChecker.hidden && !blackChecker.hidden) {
+redChecker.hidden= true
+blackChecker.hidden= true
+}  else if (redChecker.hidden && blackChecker.hidden) {
+redChecker.hidden= false
+blackChecker.hidden= true
+}  
+    
+    
+    }
+
+</script>
+
+
+</head>
+
+<body>
+    <br>
+    <div id="name"><img style="float:center;" width:"500" height="100" padding:"30px" src="name.png"/></div>
+<br>
+ <div id="board-container">
+</div>
+<br>
+
+<div id="number"><img style="float:center;" width:"500" height="100" padding:"30px" src="Number.png"/></div>
+</body>
+<script> 
+    console.log('please work')
+    $('#board-container').html(createBoard())</script>
+
+</html>
+
