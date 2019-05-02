@@ -1,3 +1,33 @@
+
+function createChecker(rowNum) {
+  if (rowNum <=3) {
+    return `<div class="checker red-checker"></div> <div class="checker black-checker" hidden></div>`
+  }
+  else if (rowNum >= 6) {
+  return ` <div class="checker black-checker"> </div> <div class="checker red-checker" hidden></div>`
+}
+else { return `<div class="checker black-checker" hidden></div> <div class="checker red-checker" hidden></div>`}
+}
+
+.cell {
+width: 100px;
+height: 100px;
+display: inline-block;
+margin: 0px;
+*//max-width:;
+*//max-height:;
+}
+
+
+function createChecker(i, color) {
+  return `<div id="checker-${i}" class="checker ${color}-checker"><div>`
+}
+
+
+
+
+
+
 .row {
 
 justify-content: space-evenly;

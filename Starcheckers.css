@@ -1,42 +1,72 @@
 body {
-background-color: light grey;
-text-align: center;
+    background-color: light grey;
+    text-align: center;
 }
 
 .cell {
-width: 100px;
-height: 100px;
-display: inline-block;
-margin: 0px;
-*//max-width:;
-*//max-height:;
+    width: 9vw;
+    height: 9vw;
+    display: inline-block;
+    margin: 0px;
+    max-width: 12vh;
+    max-height: 12vh;
 }
 
 #board-container {
-background-color: gold;
-display: inline-block;
-padding: 10px;
+    background-color: gold;
+    display: inline-block;
+    padding: 10px;
 }
 
 
 .black  {
-background-image: url("tie.png");}
+    background-image: url("tie.png");
+    background-size: cover;
+    color: red;
+}
 
 
-.red
-
-{ background-image: url("fighters.png")}
+.red {
+     background-image: url("fighters.png");
+     background-size: cover;
+     color: black;
+}
 
 
 .checker {
-margin: 10%;
-height: 80%;
-width: 80%;
+    margin: 10%;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
 }
 
 .red-checker {
- background-image: url("RebelBird.png")}
+    background-image: url("knight.png");
+    background-size: cover;
+}
 
 .black-checker {
- background-image: url("RedEmpire.png");}
+    background-image: url("king.png");
+    background-size: cover;
+}
 
+ .selected {
+ border: solid .5px whitesmoke
+ }
+ 
+ .jail {
+    
+    /*width:11vmin;*/
+    /*height:11vmin;*/
+ 
+ }
+
+.crown {
+    background-size: 1px; 
+font-size: 3vmin
+
+}
