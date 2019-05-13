@@ -75,16 +75,20 @@ function createCheckers() {
   console.log (`starting createCheckers`)
   clearBoard()
   $(`.black.cell`).click(MoveselectedCheckerHere)
-
   for(let i=0; i<checkers.length; i++) {
     let checker = checkers[i];
-   if (checker.row && checker.cell) { $(`#cell-${checker.row}-${checker.cell}`).html(createChecker(i, checker.color))
-    $(`#cell-${checker.row}-${checker.cell}`).unbind('click')
-  } else {
-    $(`#jail-${checker.color}`).append(`<div class="cell">${createChecker(i, checker.color)}</div>`)
+    if (checker.row && checker.cell) { $(`#cell-${checker.row}-${checker.cell}`).html(createChecker(i, checker.color))
+      $(`#cell-${checker.row}-${checker.cell}`).unbind('click')
+    } else {
+      console.log(`put `, checker, ` into out of play`)
+      $(`#out-of-play-${checker.color}`).append(`<div class="cell">${createChecker(i, checker.color)}</div>`)
+    }
+
   }
+  $(`.selected`).removeClass(`selected`)
   $('.checker').click(selectChecker)
-}
+  console.log("I just added the click handler for checkers")
+
 }
 
 function createChecker(i, color) {
@@ -100,17 +104,23 @@ function createChecker(i, color) {
 }
 
 function selectChecker() {
+  let checker = $(this)
+  if(checker.hasClass(`selected`)) {
+    console.log(`this checker was already selected`)
+    remove()
+    return
+  }
+
   $(`.selected`).removeClass(`selected`)
-let checker = $(this)
-let id = checker.attr('id')
+
+  let id = checker.attr('id')
   console.log('selecting checker', checker)
   console.log(` the id of the selected checker is ${id}`)
-let stringParts = id.split('-')
-let checkerIndex = stringParts[1]
-console.log(`checkerIndex ==`, checkerIndex)
-selectedChecker = checkers [checkerIndex]
-
-checker.addClass(`selected`)
+  let stringParts = id.split('-')
+  let checkerIndex = stringParts[1]
+  console.log(`checkerIndex ==`, checkerIndex)
+  selectedChecker = checkers[checkerIndex]
+  checker.addClass(`selected`)
 
 }
 
@@ -118,6 +128,7 @@ function remove() {
 selectedChecker.row = undefined
 selectedChecker.cell = undefined
 selectedChecker = undefined
+$(`.selected`).removeClass(`selected`)
 createCheckers()
 
 
@@ -127,6 +138,8 @@ createCheckers()
 function clearBoard() {
   $(`.black.cell`).html(``)
   $(`.black.cell`).unbind('click')
-  $(`.jail`).html(``)
+  $(`.out-of-play`).html(``)
+  selectedChecker = undefined
+  $(`.selected`).removeClass(`selected`)
   console.log('cleared board again')
 }

@@ -1,11 +1,10 @@
 $(document).ready(function () {
-console.log('document is ready')
-console.log('please work')
-$('#board-container').html(createBoard())
-createCheckers()
-    $('.checker').click(selectChecker)
-    
-    })
+    console.log('document is ready')
+    console.log('please work')
+    $('#board-container').html(createBoard())
+    createCheckers()
+
+})
 
     function MoveselectedCheckerHere() {
 if(selectedChecker) {
@@ -29,6 +28,7 @@ else if (selectedChecker.color == `red` && selectedChecker.row == 8) {
 
 
     selectedChecker = undefined
+
     createCheckers() 
     
   
